@@ -34,7 +34,7 @@ echo phone="%phone%" >> %SystemDrive%\delphijustin\wifibelt\wifibelt.vbs
 echo database="%SystemDrive%\delphijustin\wifibelt\wifibelt.db" >> %SystemDrive%\delphijustin\wifibelt\wifibelt.vbs
 type wifibelt.vb_ >> %SystemDrive%\delphijustin\wifibelt\wifibelt.vbs
 copy /Y wifibelt.cf_ %SystemDrive%\delphijustin\wifibelt\wifibelt.cfg
-echo NewDeviceExecuteCommand=%SystemDrive%\delphijustin\wifibelt\wifibelt.vbs /mac:%%mac_addr%% /ip:%%ip_addr%% /company:%%adapter_company%% >> %SystemDrive%\delphijustin\wifibelt\wifibelt.cfg
+echo NewDeviceExecuteCommand=wscript.exe %SystemDrive%\delphijustin\wifibelt\wifibelt.vbs /mac:%%mac_addr%% /ip:%%ip_addr%% /company:%%adapter_company%% >> %SystemDrive%\delphijustin\wifibelt\wifibelt.cfg
 echo Monitor when you login to windows?
 choice /C YN /M "Press Y for yes N for no"
 if errorlevel 2 goto nostartup
