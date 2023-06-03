@@ -7,6 +7,10 @@ if "%missingfile%"=="" goto allfilesexist
 echo File not found %missingfile%
 pause
 goto end
+:choiceerror
+echo choice command failed.
+pause
+goto end
 :allfilesexist
 echo About ready to install continue?
 choice /C YN /M "Press Y for yes,N for no"
@@ -17,15 +21,6 @@ goto choiceerror
 md %SystemDrive%\delphijustin
 md %SystemDrive%\delphijustin\wifibelt
 copy wirelessnetworkwatcher\*.* %SystemDrive%\delphijustin\wifibelt
-echo Do you want to update wifibelt.vbs file?
-choice /C YN /M "Press Y for yes or N for no"
-if errorlevel 2 goto end
-if errorlevel 1 goto editvbs
-:choiceerror
-echo choice command failed.
-pause
-goto end
-:editvbs
 set apikey=textbelt
 set /P apikey=Enter textbelt API Key, for free once a day text leave blank:
 set /P phone=Enter your 10-digit phone#, example 8001234567:
