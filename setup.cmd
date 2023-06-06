@@ -39,7 +39,7 @@ goto choiceerror
 reg add HKLM\Software\Microsoft\Windows\CurrentVersion\Run /V WifiBelt /T REG_SZ /D "%SystemDrive%\delphijustin\wifibelt\wnetwatcher.exe /cfg %SystemDrive%\delphijustin\wifibelt\Wifibelt.cfg"
 :nostartup
 echo Start monitoring now?
-choice /YN /M "Press Y for yes N for no"
+choice /C YN /M "Press Y for yes N for no"
 if errorlevel 2 goto dontstart
 if errorlevel 1 goto startmon
 goto choiceerror
